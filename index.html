@@ -3,12 +3,29 @@
     <title> Dogs and cats
      </title>
      <link rel="stylesheet" type="text/css" href="index.css">
+     <script type="text/javascript" src="brython.js"></script>
+
   </head>
-  <body>
+<script type="text/python">
+from browser import document, alert
+
+def echo(ev):
+    alert(ev.target.text)
+
+document["woof"].bind("click", echo)
+document["meow"].bind("click", echo)
+
+</script>
+
+  <body onLoad="brython(1)">
     <h1> Dog</h1>
     <a href = 'https://en.wikipedia.org/wiki/Dog'> Dog </a>
     <h2> Small dog </h2>
+    <button id="woof">Woof !</button>
     <p>  This is a small dog </p>
+
+
+
     <img src = 'small-dog.jpg' />
     <h2> Big dog </h2>
     <p>  This is a big dog </p>
@@ -16,7 +33,11 @@
     <h1> Cat</h1>
     <a href = 'https://en.wikipedia.org/wiki/Cat'> Cat </a>
     <h2> Kitten </h2>
+    <button id="meow"> Meow !</button>
+
     <p>  This is a kitten </p>
+
+
     <img src = 'kitten.jpg' />
     <h2> Cat </h2>
     <p>  This is an adult cat </p>
